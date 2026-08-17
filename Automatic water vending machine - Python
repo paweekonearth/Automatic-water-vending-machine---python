@@ -1,0 +1,38 @@
+print("===== เครื่องขายน้ำอัตโนมัติ =====")
+
+while True:
+    print("\n1. น้ำเปล่า - 10 บาท")
+    print("2. น้ำอัดลม - 15 บาท")
+    print("3. น้ำผลไม้ - 20 บาท")
+
+    menu = int(input("เลือกเครื่องดื่ม (1-3): "))
+
+    if menu == 1:
+        price = 10
+        drink = "น้ำเปล่า"
+    elif menu == 2:
+        price = 15
+        drink = "น้ำอัดลม"
+    elif menu == 3:
+        price = 20
+        drink = "น้ำผลไม้"
+    else:
+        print("ไม่มีเมนูนี้")
+        continue
+
+    money = int(input("ใส่จำนวนเงิน: "))
+
+    if money >= price:
+        change = money - price
+        print("คุณได้รับ:", drink)
+        print("เงินทอน:", change, "บาท")
+        print("ขอบคุณที่ใช้บริการ")
+    else:
+        print("เงินไม่พอ")
+        print("ต้องการเพิ่มอีก", price - money, "บาท")
+
+    again = input("\nต้องการใช้บริการต่อหรือไม่? (y/n): ")
+
+    if again.lower() == "n":
+        print("=== ขอบคุณที่ใช้บริการ ===")
+        break
